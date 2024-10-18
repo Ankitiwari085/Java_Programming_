@@ -11,31 +11,33 @@ public class classSession {
 //        System.out.println(student1.is_Passed);
 //        System.out.println(student1.cgpa);
 
-     Student student2 =new Student("Ankit Tiwari",2015,8.1f);
-     Student student3 =new Student("Amit Tiwari",2016,8.2f);
-     Student student4 =new Student("Umesh Tiwari",2017,8.3f);
-     Student student5 =new Student("Prince Tiwari",2018,8.4f);
-        student2.student_Details();
-        student3.student_Details();
-        student4.student_Details();
-        student5.student_Details();
-
-        student2.attendance();
-        student3.attendance();
-        student4.attendance();
-        student5.attendance();
+//     Student student2 =new Student("Ankit Tiwari",2015,8.1f);
+//     Student student3 =new Student("Amit Tiwari",2016,8.2f);
+//     Student student4 =new Student("Umesh Tiwari",2017,8.3f);
+//     Student student5 =new Student("Prince Tiwari",2018,8.4f);
+//        student2.student_Details();
+//        student3.student_Details();
+//        student4.student_Details();
+//        student5.student_Details();
+//
+//        student2.attendance();
+//        student3.attendance();
+//        student4.attendance();
+//        student5.attendance();
 
         Student.total_Student();
+//        Student.student_count =100;  // BY Making the Student_count Private , we can't access the student_count in
+        Student.total_Student();          //  the main method ...
     }
 }
 
 
 class  Student {
     String name ;
-    int student_Id;
+   private  int student_Id;
     boolean is_Passed;
     float cgpa;
-     static int student_count =0;
+    private static int student_count =0;
     Student(){
         student_count ++;
     }
@@ -63,6 +65,12 @@ class  Student {
    }
     static  void total_Student(){
         System.out.println("Total NUmber of Student :- " + student_count);
+    }
+     public void setStudent_Id(int student_Id){
+        this.student_Id=student_Id;
+    }
+    public int getStudent_Id(){
+        return student_Id;
     }
 
 }
